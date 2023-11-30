@@ -1,0 +1,17 @@
+version: "3"
+
+services:
+  postgres:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: alpha
+      POSTGRES_PASSWORD: lambda
+      POSTGRES_DB: alpha
+    volumes:
+      - "pgdata:/var/lib/postgresql/data"
+    ports:
+      - "127.0.0.1:5432:5432"
+
+volumes:
+  pgdata:
